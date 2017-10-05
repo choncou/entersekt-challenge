@@ -33,4 +33,38 @@ Visit http://localhost:8080 in your browser
 > - Will be nice if you can git tag the tasks by number
 
 ### Solution
-Explain what you have done here and why...
+#### Task 1
+- Added `/todo/edit/:id` route.
+- Sent as post request to pass the form params as part of the request body
+
+#### Task 2
+- Used [Cypress](https://docs.cypress.io/) as testing framework. Chosen for simplicity due to minimal dependencies for a small project compared to other UI testing frameworks
+- For each of the main action (add, delete, edit) there is a validation test to
+  confirm whether the happy path works, as well as a test to ensure the
+  defensive programming against the missing ID parameter would not yield
+  unexpected results.
+- Test can be found in `./cypress`
+
+Running Tests:
+1. Run `npm install` to get required dependencies
+2. Run `npm start` to run the server for the integration tests, leave running while
+testing.
+3. Run `npm test` to run all tests
+
+#### Task 3
+Docker:
+1. Install Docker (https://docs.docker.com/engine/installation/) if not already
+  installed
+2. In this project directory run the following commands:
+  1. `docker build -t unathi/my-todolist .`
+  2. `docker run -p 8080:8080 -d unathi/my-todolist`
+
+- The app is now running on `localhost:8080` on your local machine
+
+#### Task 4
+N/A
+
+#### Task 5
+- The vulnerability was in displaying unescaped value for each `todo` item
+- Cypress currently doesn't support working with alerts, so this test was not
+  completed but the concept is show. The site no longer has the vulnerability.

@@ -9,10 +9,20 @@
     </head>
 
     <body>
-        <h1>My todolist</h1>
-        <ul>
-        <% todolist.forEach(function(todo, index) { %>
-            <li><a href="/todo/delete/<%= index %>">✘</a> <%- todo %></li>
+        <h1 id="header">My todolist</h1>
+        <ul class="todo-items">
+
+        <% todolist.forEach(function(todo, index, list) { %>
+          <li class="item">
+              <a href='/todo/delete/<%= index %>'>✘</a>
+              <%= todo %>
+
+            <form action="/todo/edit/<%= index %>" method="post" style="display: inline;">
+              <input type="text" placeholder="update" name="updatetodo" id="updatetodo-<%= index %>" autofocus />
+              <input type="submit" id='updatesubmit-<%= index %>' value="🔃" />
+            </form>
+
+          </li>
         <% }); %>
         </ul>
 
@@ -20,8 +30,8 @@
             <p>
                 <label for="newtodo">What shoud I do?</label>
                 <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" />
+                <input type="submit" id="newsubmit" />
             </p>
         </form>
-    </body>
+</body>
 </html>

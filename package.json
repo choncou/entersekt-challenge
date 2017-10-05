@@ -6,6 +6,13 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0"
   },
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/cypress run"
+  },
   "author": "riaan@entersekt.com",
-  "description": "Basic to do list exercise"
+  "description": "Basic to do list exercise",
+  "devDependencies": {
+    "cypress": "^0.20.1"
+  }
 }
