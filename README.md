@@ -63,8 +63,10 @@ Docker:
 
 #### Task 4
 N/A
+Cypress currently does not support a way of determining coverage on end-to-end
+tests.
 
 #### Task 5
 - The vulnerability was in displaying unescaped value for each `todo` item
 - Cypress currently doesn't support working with alerts, so this test was not
-  completed but the concept is show. The site no longer has the vulnerability.
+  completed but the concept is shown. The site no longer has the vulnerability.
